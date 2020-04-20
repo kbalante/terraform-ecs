@@ -1,6 +1,6 @@
 resource "aws_ecs_cluster" "cluster" {
-  name = "ecs-devl-cluster"
+  name = "terraform-ecs-cluster"
   tags = {
-    name = "ecs-cluster-name"
+    name = "terraform-ecs-cluster"
   }
 }

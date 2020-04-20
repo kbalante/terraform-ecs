@@ -1,13 +1,13 @@
 resource "aws_lb" "loadbalancer" {
   internal            = false
-  name                = "openapi-alb-name"
+  name                = "terraform-ecs-lb"
   subnets             = ["subnet-00f2624337a16d014", "subnet-0b6bb37a4634b73f2"]
   security_groups     = ["sg-0786e2e7889e0f83f"]
 }
 
 
 resource "aws_lb_target_group" "lb_target_group" {
-  name        = "openapi-target-alb-name"
+  name        = "terraform-ecs-tg"
   port        = "80"
   protocol    = "HTTP"
   vpc_id      = "vpc-00885662b043829e6"

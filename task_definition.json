@@ -1,18 +1,10 @@
 
 [
   {
-    "name": "openapi-ecs-container",
+    "name": "terraform-ecs-container",
     "image": "798617457475.dkr.ecr.us-east-2.amazonaws.com/hello-world:latest",
     "cpu": 10,
     "memory": 512,
-    "logConfiguration": {
-      "logDriver": "awslogs",
-      "options": {
-        "awslogs-group": "openapi-devl-cw",
-        "awslogs-region": "eu-west-1",
-        "awslogs-stream-prefix": "ecs"
-      }
-    },
     "links": [],
     "portMappings": [
       {
