@@ -1,12 +1,2 @@
 #!/bin/bash
-
-# Update all packages
-
-sudo yum update -y
-sudo yum install -y ecs-init
-sudo service docker start
-sudo start ecs
-
-#Adding cluster name in ecs config
-echo ECS_CLUSTER=openapi-devl-cluster >> /etc/ecs/ecs.config
-cat /etc/ecs/ecs.config | grep "ECS_CLUSTER"
+echo ECS_CLUSTER=terraform-ecs-cluster >> /etc/ecs/ecs.config;echo ECS_BACKEND_HOST= >> /etc/ecs/ecs.config;

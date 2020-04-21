@@ -5,23 +5,11 @@ resource "aws_lb" "loadbalancer" {
   security_groups     = ["sg-04a87c7dcdde7b2da"]
 }
 
-
 resource "aws_lb_target_group" "lb_target_group" {
   name        = "terraform-ecs-tg"
   port        = "80"
   protocol    = "HTTP"
   vpc_id      = "vpc-00885662b043829e6"
-
-
-  #STEP 1 - ECS task Running
-  health_check {
-    healthy_threshold   = "3"
-    interval            = "10"
-    port                = "8080"
-    path                = "/index.html"
-    protocol            = "HTTP"
-    unhealthy_threshold = "3"
-  }
 }
 
 resource "aws_lb_listener" "lb_listener" {

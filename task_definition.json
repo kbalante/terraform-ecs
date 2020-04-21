@@ -2,7 +2,6 @@
   {
     "name": "terraform-ecs-container",
     "image": "798617457475.dkr.ecr.us-east-2.amazonaws.com/hello-world:latest",
-    "cpu": 10,
     "memory": 512,
     "links": [],
     "portMappings": [

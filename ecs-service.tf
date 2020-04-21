@@ -10,6 +10,4 @@ resource "aws_ecs_service" "service" {
     container_port       = "80"
     target_group_arn     = aws_lb_target_group.lb_target_group.arn
   }
-
-  depends_on              = ["aws_lb_listener.lb_listener"]
 }
