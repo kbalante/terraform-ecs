@@ -28,8 +28,7 @@ You will need to do the following to get your ECS cluster working:
 balancer, a task definition, and an ECS service.
 
 9. Go to your AWS Console and search for Elastic Container Service. You should see your newly provisioned ECS Cluster.
-- inside the cluster, open up the tasks tab and click on the one task there
-- under Containers, select the container terraform-ecs-container
-- copy the extternal link in your browser to test out the container.
+- inside the terraform-ecs-cluster, open up the Tasks tab and click on the running task shown
+- under Containers, select terraform-ecs-container. This will expand the container details
+- copy the external link in your browser to test out the container.
 - you should see Hello World!
-
