@@ -13,3 +13,11 @@ variable "security_groups" {
 variable "instance_type" {
   default = "m5ad.large"
 }
+
+variable "iam_instance_profile" {
+  default = "arn:aws:iam::798617457475:instance-profile/ecsInstanceRole"
+}
+
+variable "ami" {
+  default = "ami-008c5ba1857e0fdec"
+}
