@@ -1,15 +1,16 @@
-resource "aws_lb" "loadbalancer" {
+resource "aws_lb" "load_balancer" {
   internal            = false
-  name                = "terraform-ecs-loadbalancer"
-  subnets             = ["subnet-05252f85c65945218", "subnet-0ea1ad0f63779cabd"]
-  security_groups     = ["sg-04a87c7dcdde7b2da"]
+  name                = "terraform-ecs-load-balancer"
+  subnets             = var.subnets
+  security_groups     = var.security_groups
 }
 
 resource "aws_lb_target_group" "lb_target_group" {
   name        = "terraform-ecs-tg"
   port        = "80"
   protocol    = "HTTP"
-  vpc_id      = "vpc-00885662b043829e6"
+  vpc_id      = var.vpc_id
+  depends_on = [aws_lb.load_balancer]
 }
 
 resource "aws_lb_listener" "lb_listener" {
@@ -18,7 +19,7 @@ resource "aws_lb_listener" "lb_listener" {
     type             = "forward"
   }
 
-  load_balancer_arn = aws_lb.loadbalancer.arn
+  load_balancer_arn = aws_lb.load_balancer.arn
   port              = "80"
   protocol          = "HTTP"
 }
